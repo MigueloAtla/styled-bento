@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { AutoColumns } from '.'
 
 describe('ExampleComponent', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(AutoColumns).toBeTruthy()
   })
 })

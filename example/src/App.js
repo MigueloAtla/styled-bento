@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AutoColumns, Flex, Column, Row, Grid } from 'bento-ui'
+import { AutoColumns, Flex, Column, Row, Bento } from 'bento-ui'
 import { Text } from 'rebass/styled-components'
 
 const App = () => {
@@ -10,13 +10,13 @@ const App = () => {
         <Text alignSelf='center' justifySelf='center'>
           hei
         </Text>
-        <Column center test>
+        <Column center mark>
           <p>hei</p>
           <p>hei</p>
         </Column>
         <Row
           center
-          test
+          mark
           sx={{
             border: ['1px solid green', '1px solid pink', '10px solid blue']
           }}
@@ -24,8 +24,8 @@ const App = () => {
           <p>hei</p>
           <p>hei</p>
         </Row>
-        <Grid
-          test='pink'
+        <Bento
+          mark='pink'
           gap={['10px', '50px', '100px']}
           areas={[
             `'header' 'content'`,
@@ -37,17 +37,17 @@ const App = () => {
         >
           {({ Header, Content, Sidebar }) => (
             <>
-              <Header as={AutoColumns} center test='blue'>
+              <Header as={AutoColumns} center mark='blue'>
                 <Text>Header</Text>
                 <Text>Header</Text>
               </Header>
               <Content>Content</Content>
-              <Sidebar test center as={Row}>
+              <Sidebar mark center as={Row}>
                 Sidebar
               </Sidebar>
             </>
           )}
-        </Grid>
+        </Bento>
       </AutoColumns>
       <Flex flexDirection={['row', 'column']}>
         <Text>Hei</Text>

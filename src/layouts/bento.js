@@ -2,13 +2,13 @@ import React from 'react'
 import Flex from './flex'
 import { Box } from 'rebass/styled-components'
 import PropTypes from 'prop-types'
-import { testProp, centerProp } from '../props'
+import { markProp, centerProp } from '../props'
 
 function capitalizeFirstLetter (string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-const Grid = ({ children, areas, gap, test = false, sx, ...props }) => {
+const Bento = ({ children, areas, gap, mark = false, sx, ...props }) => {
   const splitSpaces = areas.map((area) => {
     return area.match(/[a-z-]+/gi)
   })
@@ -32,7 +32,7 @@ const Grid = ({ children, areas, gap, test = false, sx, ...props }) => {
     Areas[capitalizeFirstLetter(item)] = ({
       children,
       as,
-      test,
+      mark,
       center,
       sx,
       ...props
@@ -46,7 +46,7 @@ const Grid = ({ children, areas, gap, test = false, sx, ...props }) => {
           {...props}
         >
           <Flex
-            sx={{ ...testProp(test), ...centerProp(center), ...sx }}
+            sx={{ ...markProp(mark), ...centerProp(center), ...sx }}
             as={as}
             width='100%'
             height='100%'
@@ -64,7 +64,7 @@ const Grid = ({ children, areas, gap, test = false, sx, ...props }) => {
         display: 'grid',
         gridTemplateAreas: areas,
         gridGap: gap,
-        ...testProp(test),
+        ...markProp(mark),
         ...sx
       }}
       {...props}
@@ -74,18 +74,18 @@ const Grid = ({ children, areas, gap, test = false, sx, ...props }) => {
   )
 }
 
-Grid.propTypes = {
+Bento.propTypes = {
   /** Centers the children, can be:
    * 1. center={true} or center: for horizontal and vertical centering
    * 2. center={'h'} for horizontal centering
    * 2. center={'v'} for vertical centering
    * */
   center: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  test: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
+  mark: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
 }
-Grid.defaulProps = {
+Bento.defaulProps = {
   center: false,
-  test: false
+  mark: false
 }
 
-export default Grid
+export default Bento

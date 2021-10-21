@@ -12,7 +12,7 @@ const Column = ({ children, ...props }) => {
 
 Column.propTypes = {
   center: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  test: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  mark: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   sx: PropTypes.object
 }
 

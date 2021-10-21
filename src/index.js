@@ -1,9 +1,3 @@
-// import React from 'react'
-// import styles from './styles.module.css'
-import { AutoColumns, Column, Row, Grid, Flex } from './layouts'
+import { AutoColumns, Column, Row, Bento, Flex } from './layouts'
 
-export { AutoColumns, Column, Row, Grid, Flex }
-
-// export const ExampleComponent = ({ text }) => {
-//   return <div className={styles.test}>Example Component: {text}</div>
-// }
+export { AutoColumns, Column, Row, Bento, Flex }

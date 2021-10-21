@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { Flex as Layout } from 'rebass'
 import PropTypes from 'prop-types'
-import { centerProp, testProp } from '../props'
+import { centerProp, markProp } from '../props'
 
 const Flex = ({
   children,
   flexDirection,
   center = false,
-  test = false,
+  mark = false,
   sx,
   ...props
 }) => {
@@ -15,7 +15,7 @@ const Flex = ({
     <Layout
       flexDirection={flexDirection}
       {...props}
-      sx={{ ...centerProp(center), ...testProp(test), ...sx }}
+      sx={{ ...centerProp(center), ...markProp(mark), ...sx }}
     >
       {children}
     </Layout>
@@ -24,7 +24,7 @@ const Flex = ({
 
 Flex.propTypes = {
   center: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  test: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  mark: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   flexDirection: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.oneOf(['row', 'column'])

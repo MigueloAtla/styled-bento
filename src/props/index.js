@@ -17,6 +17,6 @@ export const centerProp = (center) => {
   return centered
 }
 
-export const testProp = (test) => {
-  return { border: test && `1px dashed ${test === true ? 'black' : test}` }
+export const markProp = (mark) => {
+  return { border: mark && `1px dashed ${mark === true ? 'black' : mark}` }
 }

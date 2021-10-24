@@ -49,11 +49,11 @@ const App = () => {
 Styled bento exports the following components:
 | Prop   | Type             | Required | Default |
 | ------ | ---------------- | -------- | ------- |
-| Test   | Bool \|\| String | false    | false   |
-| Center | Bool \|\| String | false    | false   |
+| mark   | Bool \|\| String | false    | false   |
+| center | Bool \|\| String | false    | false   |
 
-* **test**: display a dashed border in the component.
-  - test='color' changes the color of the border.
+* **mark**: display a dashed border in the component.
+  - mark='color' changes the color of the border.
 * **center**: centers horizontally and vertically the content, equivalent to **justify-content: center** and **align-items: center**.
   - center='v || h' applies only one orientation to center.
 
@@ -61,9 +61,9 @@ Styled bento exports the following components:
 Passing booleans
 ```jsx
 // centers horizontally and vertically and it's marked with black border
-const TestAndCentered = () => {
+const markAndCentered = () => {
   return (
-    <Flex test center>
+    <Flex mark center>
       <p>Marked<p>
       <p>And Centered<p>
     </Flex>
@@ -74,9 +74,9 @@ Passing strings
 ```jsx
 // centers vertically and it's marked with yellow border
 
-const TestYellowAndVerticallyCentered = () => {
+const markYellowAndVerticallyCentered = () => {
   return (
-    <Flex test='yellow' center='v'>
+    <Flex mark='yellow' center='v'>
       <p>Vertically,<p>
       <p>yellow marks<p>
     </Flex>
@@ -95,7 +95,7 @@ import { Grid } from 'styled-bento'
 const App = () => {
   return (
     <Grid
-      test='pink'
+      mark='pink'
       gap={['10px', '50px', '100px']}
       areas={[
         `'header' 'content'`,
@@ -107,12 +107,12 @@ const App = () => {
     >
       {({ Header, Content, Sidebar }) => (
         <>
-          <Header as={AutoColumns} center test='blue'>
+          <Header as={AutoColumns} center mark='blue'>
             <Text>Header</Text>
             <Text>Header</Text>
           </Header>
           <Content>Content</Content>
-          <Sidebar test center as={Row}>
+          <Sidebar mark center as={Row}>
             Sidebar
           </Sidebar>
         </>

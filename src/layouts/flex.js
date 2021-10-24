@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Flex as Layout } from 'rebass'
+import { Flex as Layout } from 'rebass/styled-components'
 import PropTypes from 'prop-types'
 import { centerProp, markProp } from '../props'
 

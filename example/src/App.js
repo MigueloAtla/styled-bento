@@ -1,18 +1,19 @@
 import React from 'react'
 
-import { AutoColumns, Flex, Column, Row, Bento } from 'bento-ui'
-import { Text } from 'rebass/styled-components'
+import { AutoColumns, Flex, Column, Row, Bento, Text } from 'bento-ui'
 
 const App = () => {
   return (
     <>
       <AutoColumns>
-        <Text alignSelf='center' justifySelf='center'>
+        <Text as='h1' alignSelf='center' justifySelf='center'>
           hei
         </Text>
         <Column center mark>
           <p>hei</p>
-          <p>hei</p>
+          <Text mark fontSize={[3, 4, 5]} fontWeight='bold' color='primary'>
+            Text
+          </Text>
         </Column>
         <Row
           center

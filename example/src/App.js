@@ -16,6 +16,7 @@ const App = () => {
           </Text>
         </Column>
         <Row
+          gap='10px'
           center
           mark
           sx={{

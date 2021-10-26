@@ -8,6 +8,7 @@ const Flex = ({
   flexDirection,
   center = false,
   mark = false,
+  gap = 0,
   sx,
   ...props
 }) => {
@@ -15,7 +16,7 @@ const Flex = ({
     <Layout
       flexDirection={flexDirection}
       {...props}
-      sx={{ ...centerProp(center), ...markProp(mark), ...sx }}
+      sx={{ ...centerProp(center), ...markProp(mark), gap, ...sx }}
     >
       {children}
     </Layout>
@@ -29,7 +30,8 @@ Flex.propTypes = {
     PropTypes.array,
     PropTypes.oneOf(['row', 'column'])
   ]),
-  sx: PropTypes.object
+  sx: PropTypes.object,
+  gap: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }
 
 export default Flex

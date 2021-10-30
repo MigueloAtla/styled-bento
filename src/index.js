@@ -5,5 +5,6 @@ import Row from './layouts/row'
 import AutoColumns from './layouts/autoColumns'
 import Bento from './layouts/bento'
 import Text from './atoms/text'
+import Masonry from './layouts/masonry'
 
-export { Box, AutoColumns, Column, Row, Bento, Flex, Text }
+export { Box, AutoColumns, Column, Row, Bento, Masonry, Flex, Text }

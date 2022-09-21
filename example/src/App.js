@@ -52,7 +52,7 @@ export const theme = {
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <ResizableText as='h1' maxSize='60px' color={['black', 'white']}>
+      <ResizableText as='h1' maxSize={60} color={['black', 'white']}>
         This text is pretended to take only a line
       </ResizableText>
 

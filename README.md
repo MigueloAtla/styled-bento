@@ -134,6 +134,8 @@ const App = () => {
   )
 }
 ```
+[Try the Demo.](https://styled-bento-examples.vercel.app/bento)
+
 # Column
 ```jsx
 import { Column } from 'styled-bento'
@@ -150,6 +152,9 @@ const App = () => {
   )
 }
 ```
+[Try the Demo.](https://styled-bento-examples.vercel.app/column)
+
+
 # Row
 ```jsx
 import { Row } from 'styled-bento'
@@ -165,6 +170,7 @@ const App = () => {
   )
 }
 ```
+[Try the Demo.](https://styled-bento-examples.vercel.app/row)
 
 # AutoColumns
 
@@ -182,6 +188,8 @@ const App = () => {
   )
 }
 ```
+[Try the Demo.](https://styled-bento-examples.vercel.app/autoColumns)
+
 
 # Masonry
 ```jsx
@@ -240,9 +248,20 @@ const App = () => {
   </Masonry>
 }
 ```
+[Try the Demo.](https://styled-bento-examples.vercel.app/masonry)
 
 # Text
+[Try the Demo.](https://styled-bento-examples.vercel.app/text)
+
 # ResizableText
+Text that autoresizes to take one line in every screen size.
+
+Basic props:
+| Prop   | Type             | Required | Default |
+| ------ | ---------------- | -------- | ------- |
+| maxSize| int              | false    | null    |
+| center | Bool \|\| String | false    | false   |
+[Try the Demo.](https://styled-bento-examples.vercel.app/resizableText)
 
 
 ## License

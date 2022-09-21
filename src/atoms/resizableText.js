@@ -24,9 +24,6 @@ const ResizableText = ({
 
   return (
     <React.Fragment>
-      {/* <RebassText {...props} oneLine={false} sx={{ ...markProp(mark), ...sx }}>
-        {children}
-      </RebassText> */}
       <Box {...props} as={as} sx={{ ...markProp(mark), ...sx }}>
         <svg
           ref={titleRef}

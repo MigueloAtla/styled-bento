@@ -11,8 +11,8 @@ npm install --save styled-bento
 ```
 ## Usage
 
-Theese components are builded in top of rebass and styled-system, so if you don't know about rebass you should visit their documentation:
-[Rebass page](https://rebassjs.org/)
+Theese components are builded in top of rebass and styled-system, so if you don't know about theese libraries, you should visit their documentation:\
+[Rebass page](https://rebassjs.org/)\
 [Styled System](https://styled-system.com/)
 
 ```jsx
@@ -47,6 +47,17 @@ const App = () => {
 ```
 
 Styled bento exports the following components:
+- [Bento](#Bento)
+- Box
+- Flexibility
+- AutoColums
+- Column
+- Row
+- Masonry
+- Text
+- ResizableText
+
+Basic props:
 | Prop   | Type             | Required | Default |
 | ------ | ---------------- | -------- | ------- |
 | mark   | Bool \|\| String | false    | false   |
@@ -85,7 +96,7 @@ const markYellowAndVerticallyCentered = () => {
 
 ```
 
-### Bento
+# Bento
 Bento is a conceptual way to understand grid with template areas, designed to maintain clear semantics for a good code readability, and easy responsive flexibility and composability.
 Bento is inspired by [atomic-layout](https://redd.gitbook.io/atomic-layout/) package but with rebass in mind.
 

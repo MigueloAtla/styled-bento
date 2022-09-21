@@ -6,6 +6,7 @@ import {
   Column,
   Row,
   Bento,
+  ResizableText,
   Text,
   Masonry,
   Box
@@ -51,6 +52,35 @@ export const theme = {
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
+      <ResizableText as='h1' maxSize='60px' color={['black', 'white']}>
+        This text is pretended to take only a line
+      </ResizableText>
+
+      <Bento
+        mark='yellow'
+        margin='50px'
+        gap={['10px', '50px', '100px']}
+        areas={[
+          `'header' 'content'`,
+          `'header header'
+            'sidebar content'`,
+          `'header header'
+            'content sidebar'`
+        ]}
+      >
+        {({ Header, Content, Sidebar }) => (
+          <>
+            <Header as={AutoColumns} center mark='blue'>
+              <Text>Header</Text>
+              <Text>Header</Text>
+            </Header>
+            <Content>Content</Content>
+            <Sidebar mark center as={Row}>
+              Sidebar
+            </Sidebar>
+          </>
+        )}
+      </Bento>
       <AutoColumns>
         <Text as='h1' alignSelf='center' justifySelf='center'>
           hei
@@ -111,7 +141,20 @@ const App = () => {
         <Text>hei</Text>
         <Text>hei</Text>
       </AutoColumns>
-
+      <Row bg={['white', 'green']} color='black'>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+      </Row>
+      <Column>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+      </Column>
       <Masonry cols={[4, 5, 6, 7]} mark='violet'>
         <Box mark='white' height='50px'>
           Hei 0

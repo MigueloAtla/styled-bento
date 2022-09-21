@@ -3,6 +3,21 @@ import Row from './row'
 import PropTypes from 'prop-types'
 import { withTheme } from 'styled-components'
 import { Column } from '..'
+
+const useWidth = () => {
+  const [width, setWidth] = useState(undefined)
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth / 16)
+    }
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize)
+    }
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+  return [width, setWidth]
+}
+
 const Masonry = ({
   theme,
   children,
@@ -12,16 +27,10 @@ const Masonry = ({
   ...props
 }) => {
   const [columns, setColumns] = useState([])
-
-  const [width, setWidth] = React.useState(window.innerWidth / 16)
-  React.useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth / 16)
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  })
+  const [width, setWidth] = useWidth()
+  useEffect(() => {
+    setWidth(window.innerWidth / 16)
+  }, [])
 
   const masonry = (cols) => {
     const col = []
@@ -54,7 +63,6 @@ const Masonry = ({
           return null
         }
       } else if (i > 0 && i < theme.breakpoints.length - 1) {
-        console.log(theme.breakpoints.length - 1)
         if (w > parseInt(theme.breakpoints[i - 1].slice(0, -2)) && w <= bp) {
           if (!cols[i]) {
             cols[i] = cols[cols.length - 1]

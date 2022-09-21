@@ -13,7 +13,7 @@ npm install --save styled-bento
 
 Theese components are builded in top of rebass and styled-system, so if you don't know about rebass you should visit their documentation:
 [Rebass page](https://rebassjs.org/)
-
+[Styled System](https://styled-system.com/)
 
 ```jsx
 import { Column } from 'styled-bento'
@@ -86,15 +86,17 @@ const markYellowAndVerticallyCentered = () => {
 ```
 
 ### Bento
-Bento is a conceptual way to understand grid with template areas, designed for maintain semantics for a good code readability , easy responsive flexibility and composability.
+Bento is a conceptual way to understand grid with template areas, designed to maintain clear semantics for a good code readability, and easy responsive flexibility and composability.
 Bento is inspired by [atomic-layout](https://redd.gitbook.io/atomic-layout/) package but with rebass in mind.
 
+Why use this pattern?
+
 ```jsx
-import { Grid } from 'styled-bento'
+import { Bento } from 'styled-bento'
 
 const App = () => {
   return (
-    <Grid
+    <Bento
       mark='pink'
       gap={['10px', '50px', '100px']}
       areas={[
@@ -117,7 +119,7 @@ const App = () => {
           </Sidebar>
         </>
       )}
-    </Grid>
+    </Bento>
   )
 }
 ```

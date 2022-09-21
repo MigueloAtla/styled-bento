@@ -5,7 +5,7 @@ import { markProp } from '../props'
 
 const Text = ({ children, mark = false, sx, ...props }) => {
   return (
-    <RebassText {...props} sx={{ ...markProp(mark), ...sx }}>
+    <RebassText {...props} oneLine={false} sx={{ ...markProp(mark), ...sx }}>
       {children}
     </RebassText>
   )

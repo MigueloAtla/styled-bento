@@ -56,6 +56,8 @@ const App = () => {
         This text is pretended to take only a line
       </ResizableText>
 
+      <Text as='h1'>Title</Text>
+
       <Bento
         mark='yellow'
         margin='50px'

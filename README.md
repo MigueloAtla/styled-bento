@@ -16,7 +16,7 @@ Theese components are builded in top of rebass and styled-system, so if you don'
 [Styled System](https://styled-system.com/)
 
 ```jsx
-import { Column } from 'styled-bento'
+import { Flex } from 'styled-bento'
 
 const App = () => {
   return (
@@ -32,7 +32,7 @@ const App = () => {
 
 
 ```jsx
-import { Column } from 'styled-bento'
+import { Flex } from 'styled-bento'
 
 const App = () => {
   return (
@@ -48,14 +48,14 @@ const App = () => {
 
 Styled bento exports the following components:
 - [Bento](#Bento)
-- Box
-- Flexibility
-- AutoColums
-- Column
-- Row
-- Masonry
-- Text
-- ResizableText
+- [Box](#Box)
+- [Flex](#Flex)
+- [AutoColums](#AutoColums)
+- [Column](#Column)
+- [Row](#Row)
+- [Masonry](#Masonry)
+- [Text](#Text)
+- [ResizableText](#ResizableText)
 
 Basic props:
 | Prop   | Type             | Required | Default |
@@ -134,7 +134,7 @@ const App = () => {
   )
 }
 ```
-### Column
+# Column
 ```jsx
 import { Column } from 'styled-bento'
 
@@ -150,7 +150,7 @@ const App = () => {
   )
 }
 ```
-### Row
+# Row
 ```jsx
 import { Row } from 'styled-bento'
 
@@ -166,7 +166,7 @@ const App = () => {
 }
 ```
 
-### AutoColumns
+# AutoColumns
 
 ```jsx
 import { AutoColumns } from 'styled-bento'
@@ -182,6 +182,68 @@ const App = () => {
   )
 }
 ```
+
+# Masonry
+```jsx
+import { Masonry } from 'styled-bento'
+
+const App = () => {
+  <Masonry cols={[4, 5, 6, 7]} mark='violet'>
+    <Box mark='white' height='50px'>
+      Hei 0
+    </Box>
+    <Box mark='white' height='50px'>
+      Hei 1
+    </Box>
+    <Box mark='white' height='150px'>
+      Hei 2
+    </Box>
+    <Box mark='white' height='80px'>
+      Hei 3
+    </Box>
+    <Box mark='white' height='50px'>
+      Hei 4
+    </Box>
+    <Box mark='white' height='100px'>
+      Hei 5
+    </Box>
+    <Box mark='white' height='120px'>
+      Hei 6
+    </Box>
+    <Box mark='white' height='70px'>
+      Hei 7
+    </Box>
+    <Box mark='white' height='70px'>
+      Hei 8
+    </Box>
+    <Box mark='white' height='70px'>
+      Hei 9
+    </Box>
+    <Box mark='white' height='70px'>
+      Hei 10
+    </Box>
+    <Box mark='white' height='70px'>
+      Hei 11
+    </Box>
+    <Box mark='white' height='70px'>
+      Hei 12
+    </Box>
+    <Box mark='white' height='70px'>
+      Hei 13
+    </Box>
+    <Box mark='white' height='70px'>
+      Hei 14
+    </Box>
+    <Box mark='white' height='70px'>
+      Hei 15
+    </Box>
+  </Masonry>
+}
+```
+
+# Text
+# ResizableText
+
 
 ## License
 

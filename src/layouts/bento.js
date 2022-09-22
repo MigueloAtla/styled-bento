@@ -1,14 +1,22 @@
 import React from 'react'
 import Flex from './flex'
 import { Box } from 'rebass/styled-components'
+import styled from 'styled-components'
+import { grid } from 'styled-system'
 import PropTypes from 'prop-types'
 import { markProp, centerProp } from '../props'
 
-function capitalizeFirstLetter (string) {
+function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
+const Grid = styled(Box)`
+  display: grid;
+  ${grid}
+`
+
 const Bento = ({ children, areas, gap, mark = false, sx, ...props }) => {
+  console.log(props)
   const splitSpaces = areas.map((area) => {
     return area.match(/[a-z-]+/gi)
   })
@@ -59,18 +67,17 @@ const Bento = ({ children, areas, gap, mark = false, sx, ...props }) => {
   }
 
   return (
-    <Box
+    <Grid
       sx={{
-        display: 'grid',
-        gridTemplateAreas: areas,
-        gridGap: gap,
         ...markProp(mark),
         ...sx
       }}
+      gridTemplateAreas={areas}
+      gridGap={gap}
       {...props}
     >
       {children(Areas)}
-    </Box>
+    </Grid>
   )
 }
 

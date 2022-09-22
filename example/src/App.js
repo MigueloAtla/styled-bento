@@ -62,6 +62,8 @@ const App = () => {
         mark='yellow'
         margin='50px'
         gap={['10px', '50px', '100px']}
+        gridTemplateRows='50px 1fr'
+        gridTemplateColumns='50px 1fr'
         areas={[
           `'header' 'content'`,
           `'header header'

@@ -192,59 +192,24 @@ const App = () => {
 
 
 # Masonry
+Masonry layout.
+
+Basic props:
+| Prop   | Type             | Required | Default |
+| ------ | ---------------- | -------- | ------- |
+| cols   | int array        | false    | [3]     |
+| gap    | int              | false    | 0       |
+
 ```jsx
 import { Masonry } from 'styled-bento'
 
 const App = () => {
   <Masonry cols={[4, 5, 6, 7]} mark='violet'>
-    <Box mark='white' height='50px'>
-      Hei 0
-    </Box>
-    <Box mark='white' height='50px'>
-      Hei 1
-    </Box>
-    <Box mark='white' height='150px'>
-      Hei 2
-    </Box>
-    <Box mark='white' height='80px'>
-      Hei 3
-    </Box>
-    <Box mark='white' height='50px'>
-      Hei 4
-    </Box>
-    <Box mark='white' height='100px'>
-      Hei 5
-    </Box>
-    <Box mark='white' height='120px'>
-      Hei 6
-    </Box>
-    <Box mark='white' height='70px'>
-      Hei 7
-    </Box>
-    <Box mark='white' height='70px'>
-      Hei 8
-    </Box>
-    <Box mark='white' height='70px'>
-      Hei 9
-    </Box>
-    <Box mark='white' height='70px'>
-      Hei 10
-    </Box>
-    <Box mark='white' height='70px'>
-      Hei 11
-    </Box>
-    <Box mark='white' height='70px'>
-      Hei 12
-    </Box>
-    <Box mark='white' height='70px'>
-      Hei 13
-    </Box>
-    <Box mark='white' height='70px'>
-      Hei 14
-    </Box>
-    <Box mark='white' height='70px'>
-      Hei 15
-    </Box>
+    <Box mark='white' height='50px'>1</Box>
+    <Box mark='white' height='150px'>2</Box>
+    <Box mark='white' height='80px'>3</Box>
+    <Box mark='white' height='50px'>4</Box>
+    <Box mark='white' height='100px'>5</Box>
   </Masonry>
 }
 ```
@@ -261,6 +226,7 @@ Basic props:
 | ------ | ---------------- | -------- | ------- |
 | maxSize| int              | false    | null    |
 | center | Bool \|\| String | false    | false   |
+
 [Try the Demo.](https://styled-bento-examples.vercel.app/resizableText)
 
 

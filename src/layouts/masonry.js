@@ -21,7 +21,7 @@ const useWidth = () => {
 const Masonry = ({
   theme,
   children,
-  cols = 4,
+  cols = [3],
   gap,
   mark = false,
   ...props

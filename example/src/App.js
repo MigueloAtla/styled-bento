@@ -9,7 +9,9 @@ import {
   ResizableText,
   Text,
   Masonry,
-  Box
+  Box,
+  Grid,
+  BreakpointSelector
 } from 'bento-ui'
 import { ThemeProvider } from 'styled-components'
 
@@ -58,6 +60,48 @@ const App = () => {
 
       <Text as='h1'>Title</Text>
 
+      {/* <BreakpointSelector Components={[Column, Row, Row]} /> */}
+
+      {/* <ScrollFlow>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+        <div>hola!!!!!!!!!!!!!</div>
+      </ScrollFlow> */}
+      <Grid gridGap={20}>
+        <Column>Hei</Column>
+        <Column>Hei</Column>
+        <Column>Hei</Column>
+        <Column>Hei</Column>
+        <Column>Hei</Column>
+        <Column>Hei</Column>
+      </Grid>
       <Bento
         mark='yellow'
         margin='50px'
@@ -74,7 +118,7 @@ const App = () => {
       >
         {({ Header, Content, Sidebar }) => (
           <>
-            <Header as={AutoColumns} center mark='blue'>
+            <Header as={Column} center mark='blue'>
               <Text>Header</Text>
               <Text>Header</Text>
             </Header>

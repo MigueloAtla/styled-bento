@@ -1,19 +1,13 @@
 import React from 'react'
 import Flex from './flex'
 import { Box } from 'rebass/styled-components'
-import styled from 'styled-components'
-import { grid } from 'styled-system'
+import Grid from './grid'
 import PropTypes from 'prop-types'
 import { markProp, centerProp } from '../props'
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
-
-const Grid = styled(Box)`
-  display: grid;
-  ${grid}
-`
 
 const Bento = ({ children, areas, gap, mark = false, sx, ...props }) => {
   console.log(props)
@@ -45,6 +39,8 @@ const Bento = ({ children, areas, gap, mark = false, sx, ...props }) => {
       sx,
       ...props
     }) => {
+      const Component = as
+      console.log('as', Component)
       return (
         <Box
           sx={{
@@ -53,14 +49,24 @@ const Bento = ({ children, areas, gap, mark = false, sx, ...props }) => {
           }}
           {...props}
         >
-          <Flex
-            sx={{ ...markProp(mark), ...centerProp(center), ...sx }}
-            as={as}
-            width='100%'
-            height='100%'
-          >
-            {children}
-          </Flex>
+          {as ? (
+            <Component
+              sx={{ ...markProp(mark), ...centerProp(center), ...sx }}
+              width='100%'
+              height='100%'
+            >
+              {children}
+            </Component>
+          ) : (
+            <Flex
+              sx={{ ...markProp(mark), ...centerProp(center), ...sx }}
+              width='100%'
+              height='100%'
+              as={as}
+            >
+              {children}
+            </Flex>
+          )}
         </Box>
       )
     }

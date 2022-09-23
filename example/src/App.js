@@ -105,7 +105,7 @@ const App = () => {
       <Bento
         mark='yellow'
         margin='50px'
-        gap={['10px', '50px', '100px']}
+        gridGap={['10px', '50px', '100px']}
         gridTemplateRows='50px 1fr'
         gridTemplateColumns='50px 1fr'
         areas={[
@@ -122,9 +122,11 @@ const App = () => {
               <Text>Header</Text>
               <Text>Header</Text>
             </Header>
-            <Content>Content</Content>
-            <Sidebar mark center as={Row}>
-              Sidebar
+            <Content as={Column}>Content</Content>
+            <Sidebar mark center as={Row} gap={[10, 50]}>
+              <Row>Sidebar</Row>
+              <Row>Sidebar</Row>
+              <Row>Sidebar</Row>
             </Sidebar>
           </>
         )}

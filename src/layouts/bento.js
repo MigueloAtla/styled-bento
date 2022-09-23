@@ -9,8 +9,7 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-const Bento = ({ children, areas, gap, mark = false, sx, ...props }) => {
-  console.log(props)
+const Bento = ({ children, areas, mark = false, sx, ...props }) => {
   const splitSpaces = areas.map((area) => {
     return area.match(/[a-z-]+/gi)
   })
@@ -37,10 +36,10 @@ const Bento = ({ children, areas, gap, mark = false, sx, ...props }) => {
       mark,
       center,
       sx,
+      gap = 0,
       ...props
     }) => {
       const Component = as
-      console.log('as', Component)
       return (
         <Box
           sx={{
@@ -54,6 +53,7 @@ const Bento = ({ children, areas, gap, mark = false, sx, ...props }) => {
               sx={{ ...markProp(mark), ...centerProp(center), ...sx }}
               width='100%'
               height='100%'
+              gap={gap}
             >
               {children}
             </Component>
@@ -62,6 +62,7 @@ const Bento = ({ children, areas, gap, mark = false, sx, ...props }) => {
               sx={{ ...markProp(mark), ...centerProp(center), ...sx }}
               width='100%'
               height='100%'
+              gap={gap}
               as={as}
             >
               {children}
@@ -79,7 +80,7 @@ const Bento = ({ children, areas, gap, mark = false, sx, ...props }) => {
         ...sx
       }}
       gridTemplateAreas={areas}
-      gridGap={gap}
+      // gridGap={gap}
       {...props}
     >
       {children(Areas)}

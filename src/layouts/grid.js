@@ -31,7 +31,28 @@ const Grid = ({
         ...sx
       }}
     >
-      {children}
+      {/* {children} */}
+      {React.Children.map(children, (child) => {
+        const {
+          gridColumn,
+          gridRow,
+          gridArea,
+          justifySelf,
+          alignSelf,
+          placeSelf
+        } = child.props
+        console.log(placeSelf)
+        return React.cloneElement(child, {
+          sx: {
+            gridColumn,
+            gridRow,
+            gridArea,
+            justifySelf,
+            alignSelf,
+            placeSelf
+          }
+        })
+      })}
     </GridLayout>
   )
 }

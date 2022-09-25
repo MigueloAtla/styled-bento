@@ -62,6 +62,22 @@ const App = () => {
 
       {/* <BreakpointSelector Components={[Column, Row, Row]} /> */}
 
+      <Grid>
+        <Box
+          color='green'
+          backgroundColor='black'
+          placeSelf={['center', 'end']}
+          // gridRow={['1/2', '2/3']}
+          gridArea='1/2/2/3'
+        >
+          hei
+        </Box>
+        <Box justifySelf='center'>hei</Box>
+        <Row justifySelf='center'>hei</Row>
+        <Box placeSelf='center'>hei</Box>
+        <Box>hei</Box>
+      </Grid>
+
       {/* <ScrollFlow>
         <div>hola!!!!!!!!!!!!!</div>
         <div>hola!!!!!!!!!!!!!</div>
@@ -94,14 +110,14 @@ const App = () => {
         <div>hola!!!!!!!!!!!!!</div>
         <div>hola!!!!!!!!!!!!!</div>
       </ScrollFlow> */}
-      <Grid gridGap={20}>
+      {/* <Grid gridGap={20}>
         <Column>Hei</Column>
         <Column>Hei</Column>
         <Column>Hei</Column>
         <Column>Hei</Column>
         <Column>Hei</Column>
         <Column>Hei</Column>
-      </Grid>
+      </Grid> */}
       <Bento
         mark='yellow'
         margin='50px'

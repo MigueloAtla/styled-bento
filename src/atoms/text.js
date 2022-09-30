@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Text as RebassText } from 'rebass/styled-components'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { markProp } from '../props'
 
 const Text = ({ center, children, mark = false, sx, ...props }) => {
@@ -16,9 +16,9 @@ const Text = ({ center, children, mark = false, sx, ...props }) => {
   )
 }
 
-Text.propTypes = {
-  mark: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  sx: PropTypes.object
-}
+// Text.propTypes = {
+//   mark: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+//   sx: PropTypes.object
+// }
 
 export default Text

@@ -1,8 +1,7 @@
 import * as React from 'react'
-import { Text as RebassText } from 'rebass/styled-components'
-import PropTypes from 'prop-types'
+import { Box, Text as RebassText } from 'rebass/styled-components'
+// import PropTypes from 'prop-types'
 import { markProp } from '../props'
-import { Box } from 'rebass/styled-components'
 
 const ResizableText = ({
   children,
@@ -42,9 +41,9 @@ const ResizableText = ({
   )
 }
 
-ResizableText.propTypes = {
-  mark: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  sx: PropTypes.object
-}
+// ResizableText.propTypes = {
+//   mark: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+//   sx: PropTypes.object
+// }
 
 export default ResizableText

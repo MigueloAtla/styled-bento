@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Row from './row'
+import Column from './column'
 import PropTypes from 'prop-types'
 import { withTheme } from 'styled-components'
-import { Column } from '..'
 
 const useWidth = () => {
   const [width, setWidth] = useState(undefined)

@@ -2,8 +2,9 @@ import React from 'react'
 import Flex from './flex'
 import { Box } from 'rebass/styled-components'
 import Grid from './grid'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { markProp, centerProp } from '../props'
+import { withTheme } from 'styled-components'
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
@@ -88,18 +89,18 @@ const Bento = ({ children, areas, mark = false, sx, ...props }) => {
   )
 }
 
-Bento.propTypes = {
-  /** Centers the children, can be:
-   * 1. center={true} or center: for horizontal and vertical centering
-   * 2. center={'h'} for horizontal centering
-   * 2. center={'v'} for vertical centering
-   * */
-  center: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  mark: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
-}
-Bento.defaulProps = {
-  center: false,
-  mark: false
-}
+// Bento.propTypes = {
+//   /** Centers the children, can be:
+//    * 1. center={true} or center: for horizontal and vertical centering
+//    * 2. center={'h'} for horizontal centering
+//    * 2. center={'v'} for vertical centering
+//    * */
+//   center: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+//   mark: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
+// }
+// Bento.defaulProps = {
+//   center: false,
+//   mark: false
+// }
 
-export default Bento
+export default withTheme(Bento)

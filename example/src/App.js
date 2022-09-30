@@ -17,6 +17,10 @@ import { ThemeProvider } from 'styled-components'
 
 export const theme = {
   breakpoints: ['40em', '52em', '64em'],
+  // aliases
+  // breakpoints.sm: breakpoints[0],
+  // breakpoints.md: breakpoints[1],
+  // breakpoints.lg: breakpoints[2],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   colors: {
     blue: '#07c',
@@ -51,6 +55,10 @@ export const theme = {
   }
 }
 
+theme.breakpoints.sm = theme.breakpoints[0]
+theme.breakpoints.md = theme.breakpoints[1]
+theme.breakpoints.lg = theme.breakpoints[2]
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
@@ -62,13 +70,17 @@ const App = () => {
 
       {/* <BreakpointSelector Components={[Column, Row, Row]} /> */}
 
-      <Grid>
+      <Grid width={{ _: '100px', md: '50vw', lg: '100vw' }}>
         <Box
+          mark='yellow'
           color='green'
-          backgroundColor='black'
-          placeSelf={['center', 'end']}
-          // gridRow={['1/2', '2/3']}
-          gridArea='1/2/2/3'
+          // backgroundColor='black'
+          placeSelf={['', 'center', 'end']}
+          gridColumn={{ sm: '2/2' }}
+          gridRow={{ _: '1/2', md: '2/3', lg: '3/4' }}
+          // gridArea='1/2/2/3'
+          width={[100, null, 200]}
+          // width={{ md: 100, lg: 200 }}
         >
           hei
         </Box>
@@ -118,6 +130,15 @@ const App = () => {
         <Column>Hei</Column>
         <Column>Hei</Column>
       </Grid> */}
+      {/* <Flex flexGap={[10, 250]}>
+        <Box>hei</Box>
+        <Box>hei</Box>
+        <Box>hei</Box>
+      </Flex>
+      <Column flexGap={[10, 150]}>
+        <Row>testing</Row>
+        <Row>gap</Row>
+      </Column>
       <Bento
         mark='yellow'
         margin='50px'
@@ -139,7 +160,7 @@ const App = () => {
               <Text>Header</Text>
             </Header>
             <Content as={Column}>Content</Content>
-            <Sidebar mark center as={Row} gap={[10, 50]}>
+            <Sidebar mark center as={Row}>
               <Row>Sidebar</Row>
               <Row>Sidebar</Row>
               <Row>Sidebar</Row>
@@ -158,7 +179,7 @@ const App = () => {
           </Text>
         </Column>
         <Row
-          gap='10px'
+          // gap='10px'
           center
           mark
           sx={{
@@ -270,7 +291,7 @@ const App = () => {
         <Box mark='white' height='70px'>
           Hei 15
         </Box>
-      </Masonry>
+      </Masonry> */}
     </ThemeProvider>
   )
 }

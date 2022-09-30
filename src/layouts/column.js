@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Flex from './flex'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 const Column = ({ children, ...props }) => {
   return (
@@ -10,10 +10,10 @@ const Column = ({ children, ...props }) => {
   )
 }
 
-Column.propTypes = {
-  center: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  mark: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  sx: PropTypes.object
-}
+// Column.propTypes = {
+//   center: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+//   mark: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+//   sx: PropTypes.object
+// }
 
 export default Column

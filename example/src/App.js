@@ -95,14 +95,49 @@ const App = () => {
         <Box>hei</Box>
       </Grid>
 
-      <Flex
+      <Bento
+        mark='yellow'
+        margin='50px'
+        gridGap={['10px', '50px', '100px']}
+        gridTemplateRows='50px 1fr'
+        gridTemplateColumns='50px 1fr'
+        areas={[
+          `'header' 'content'`,
+          `'header header'
+            'sidebar content'`,
+          `'header header'
+            'content sidebar'`
+        ]}
+      >
+        {({ Header, Content, Sidebar }) => (
+          <>
+            <Header as={Column} gap='10px' center mark='blue'>
+              <Text>Header</Text>
+              <Text>Header</Text>
+            </Header>
+            <Content gridArea='content' as={Grid} gap='10px'>
+              <Box>content</Box>
+            </Content>
+            <Box gridArea='header' justifySelf='end'>
+              hei
+            </Box>
+            <Sidebar mark center as={Row}>
+              <Row>Sidebar</Row>
+              <Row>Sidebar</Row>
+              <Row>Sidebar</Row>
+            </Sidebar>
+          </>
+        )}
+      </Bento>
+
+      {/* <Flex
         flexGap={{ _: 50, md: 10 }}
         sx={{ width: { _: 500, md: 1000 }, height: { _: 50, sm: 100 } }}
       >
         <Text>FLEX</Text>
         <Text>FLEX</Text>
         <Text>FLEX</Text>
-      </Flex>
+      </Flex> */}
 
       {/* <Grid gap={[20, 100]}>
         <Column>Hei</Column>

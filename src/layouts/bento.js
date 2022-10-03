@@ -5,6 +5,7 @@ import Grid from './grid'
 // import PropTypes from 'prop-types'
 import { markProp, centerProp } from '../props'
 import { withTheme } from 'styled-components'
+import { getResponsiveArrFromProp } from '../utils'
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
@@ -19,6 +20,10 @@ const Bento = ({ children, areas, mark = false, sx, ...props }) => {
   const set = Array.from(new Set(concatenated))
 
   const display = {}
+
+  const { breakpoints } = props.theme
+  const getResponsiveArrFromPropWithBreakpoints =
+    getResponsiveArrFromProp(breakpoints)
 
   splitSpaces.map((area, i) => {
     set.map((s, i) => {
@@ -81,10 +86,34 @@ const Bento = ({ children, areas, mark = false, sx, ...props }) => {
         ...sx
       }}
       gridTemplateAreas={areas}
-      // gridGap={gap}
       {...props}
     >
-      {children(Areas)}
+      {/* {children(Areas)} */}
+
+      {React.Children.map(children(Areas).props.children, (child) => {
+        console.log(child)
+        const {
+          gridColumn,
+          gridRow,
+          gridArea,
+          justifySelf,
+          alignSelf,
+          placeSelf,
+          sx
+        } = child.props
+
+        return React.cloneElement(child, {
+          sx: {
+            gridColumn: getResponsiveArrFromPropWithBreakpoints(gridColumn),
+            gridRow: getResponsiveArrFromPropWithBreakpoints(gridRow),
+            gridArea: getResponsiveArrFromPropWithBreakpoints(gridArea),
+            justifySelf: getResponsiveArrFromPropWithBreakpoints(justifySelf),
+            alignSelf: getResponsiveArrFromPropWithBreakpoints(alignSelf),
+            placeSelf: getResponsiveArrFromPropWithBreakpoints(placeSelf),
+            ...sx
+          }
+        })
+      })}
     </Grid>
   )
 }

@@ -70,14 +70,19 @@ const App = () => {
 
       {/* <BreakpointSelector Components={[Column, Row, Row]} /> */}
 
-      <Grid width={{ _: '100px', md: '50vw', lg: '100vw' }}>
+      <Grid
+        width={{ _: '100px', md: '50vw', lg: '100vw' }}
+        placeContent={{ md: 'center' }}
+        gap={[null, 10, 20]}
+      >
         <Box
+          sx={{ color: { md: 'green', lg: 'red' } }}
           mark='yellow'
-          color='green'
+          // color='green'
           // backgroundColor='black'
           placeSelf={['', 'center', 'end']}
           gridColumn={{ sm: '2/2' }}
-          gridRow={{ _: '1/2', md: '2/3', lg: '3/4' }}
+          gridRow={{ md: '2/3' }}
           // gridArea='1/2/2/3'
           width={[100, null, 200]}
           // width={{ md: 100, lg: 200 }}
@@ -85,44 +90,21 @@ const App = () => {
           hei
         </Box>
         <Box justifySelf='center'>hei</Box>
-        <Row justifySelf='center'>hei</Row>
+        {/* <Row justifySelf='center'>hei</Row> */}
         <Box placeSelf='center'>hei</Box>
         <Box>hei</Box>
       </Grid>
 
-      {/* <ScrollFlow>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-        <div>hola!!!!!!!!!!!!!</div>
-      </ScrollFlow> */}
-      {/* <Grid gridGap={20}>
+      <Flex
+        flexGap={{ _: 50, md: 10 }}
+        sx={{ width: { _: 500, md: 1000 }, height: { _: 50, sm: 100 } }}
+      >
+        <Text>FLEX</Text>
+        <Text>FLEX</Text>
+        <Text>FLEX</Text>
+      </Flex>
+
+      {/* <Grid gap={[20, 100]}>
         <Column>Hei</Column>
         <Column>Hei</Column>
         <Column>Hei</Column>

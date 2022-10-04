@@ -96,6 +96,33 @@ const App = () => {
       </Grid>
 
       <Bento
+        gridTemplateColumns='1fr'
+        gridTemplateRows='repeat(5, max-content)'
+        areas={[`'main' 'cta' 'image1' 'about' 'image2'`]}
+      >
+        {({ Main, Cta, Image1, About, Image2 }) => (
+          <>
+            <Main>
+              <Box>hei</Box>
+            </Main>
+            <Box gridArea={['main', 'cta']}>Box</Box>
+            <Cta>
+              <Box>Hei</Box>
+            </Cta>
+            <Image1>
+              <Box>Hei</Box>
+            </Image1>
+            <About>
+              <Box>Hei</Box>
+            </About>
+            <Image2>
+              <Box>Hei</Box>
+            </Image2>
+          </>
+        )}
+      </Bento>
+
+      {/* <Bento
         mark='yellow'
         margin='50px'
         gridGap={['10px', '50px', '100px']}
@@ -128,7 +155,7 @@ const App = () => {
             </Sidebar>
           </>
         )}
-      </Bento>
+      </Bento> */}
 
       {/* <Flex
         flexGap={{ _: 50, md: 10 }}

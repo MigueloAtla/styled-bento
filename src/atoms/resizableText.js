@@ -15,6 +15,7 @@ const ResizableText = ({
   const [width, setWidth] = React.useState(0)
   const [height, setHeight] = React.useState(0)
 
+  // use effect
   React.useLayoutEffect(() => {
     setWidth(titleRef.current.querySelector('text').getBBox().width)
     setHeight(titleRef.current.querySelector('text').getBBox().height)

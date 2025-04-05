@@ -8,7 +8,6 @@ import { markProp, centerProp } from '../props'
 import { getResponsiveArrFromProp } from '../utils'
 
 const GridLayout = styled(Box)`
-  display: grid;
   ${grid}
 `
 
@@ -30,14 +29,15 @@ const Grid = ({
   }
   return (
     <GridLayout
-      {...props}
       sx={{
         ...centerProp(center),
         placeContent: getResponsiveArrFromPropWithBreakpoints(placeContent),
         ...markProp(mark),
         gap,
-        ...adaptedSx
+        ...adaptedSx,
+        display: 'grid'
       }}
+      {...props}
     >
       {/* {children} */}
       {React.Children.map(children, (child) => {

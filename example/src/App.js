@@ -74,6 +74,7 @@ const App = () => {
         width={{ _: '100px', md: '50vw', lg: '100vw' }}
         placeContent={{ md: 'center' }}
         gap={[null, 10, 20]}
+        display={['none', 'grid']}
       >
         <Box
           sx={{ color: { md: 'green', lg: 'red' } }}

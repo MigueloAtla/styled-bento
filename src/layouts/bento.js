@@ -16,8 +16,6 @@ const Bento = ({ children, areas, mark = false, sx, ...props }) => {
     return area.match(/[a-z0-9-]+/gi)
   })
 
-  console.log(splitSpaces)
-
   const concatenated = [].concat(...splitSpaces)
   const set = Array.from(new Set(concatenated))
 
@@ -48,50 +46,37 @@ const Bento = ({ children, areas, mark = false, sx, ...props }) => {
       ...props
     }) => {
       const Component = as
-      return (
-        // <Box
-        //   sx={{
-        //     gridArea: item,
-        //     display: display[item]
-        //   }}
-        //   {...props}
-        // >
-        as ? (
-          <Component
-            sx={{
-              display: display[item],
-              gridArea: item,
-              ...markProp(mark),
-              ...centerProp(center),
-              ...sx
-            }}
-            // width='100%'
-            // height='100%'
-            gap={gap}
-            {...props}
-          >
-            {children}
-          </Component>
-        ) : (
-          <Box
-            sx={{
-              display: display[item],
-              gridArea: item,
-              ...markProp(mark),
-              ...centerProp(center),
-              ...sx
-            }}
-            // width='100%'
-            // height='100%'
-            gap={gap}
-            as={as}
-            {...props}
-          >
-            {children}
-          </Box>
-        )
-        // </Box>
+      return as ? (
+        <Component
+          sx={{
+            ...markProp(mark),
+            ...centerProp(center),
+            ...sx,
+            display: display[item],
+            gridArea: item
+          }}
+          gap={gap}
+          {...props}
+        >
+          {children}
+        </Component>
+      ) : (
+        <Box
+          sx={{
+            ...markProp(mark),
+            ...centerProp(center),
+            ...sx,
+            display: display[item],
+            gridArea: item
+          }}
+          gap={gap}
+          as={as}
+          {...props}
+        >
+          {children}
+        </Box>
       )
+      // </Box>
     }
   }
 
@@ -107,7 +92,6 @@ const Bento = ({ children, areas, mark = false, sx, ...props }) => {
       {/* {children(Areas)} */}
 
       {React.Children.map(children(Areas).props.children, (child) => {
-        console.log(child)
         const {
           gridColumn,
           gridRow,
